@@ -6,6 +6,7 @@ class StandingPrediction < ActiveRecord::Base
   [:cyclist_id, :tour_id, :manager_id, :rank].each do |attribute|
     validates attribute, presence: true
   end
+  
   #validates_uniqueness_of :rank, scope: [:cyclist_id, :tour_id, :manager_id]
   validates_uniqueness_of :rank, scope: [:tour_id, :manager_id]
   validates_uniqueness_of :cyclist_id, scope: [:tour_id, :manager_id]
