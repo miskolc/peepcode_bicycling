@@ -1,6 +1,15 @@
 class Manager < ActiveRecord::Base
   has_many :standing_predictions
 
+
+  def score_by_year(year)
+    score = 0
+    Tour.where(year: year).each do |tour|
+      score += score_by_tour(tour)
+    end
+    score
+  end
+
   def score_by_tour(tour)
     score = 0
     standing_predictions.where(tour: tour).each do |sp|
