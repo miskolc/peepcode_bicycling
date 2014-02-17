@@ -33,6 +33,9 @@ group :doc do
 end
 
 gem 'rspec-rails'
+
+gem 'redcarpet', '~> 2.1.1'
+gem 'nokogiri'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
